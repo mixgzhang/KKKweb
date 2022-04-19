@@ -1,0 +1,100 @@
+<!doctype html>
+<html xmlns:th="http://www/thymeleaf.org" lang="en">
+
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Login | Upcube - Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+        <meta content="Themesdesign" name="author">
+
+        <!-- Bootstrap Css -->
+        <link th:href="@{/css/bootstrap.min.css}" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <!-- Icons Css -->
+        <link th:href="@{/css/icons.min.css}" rel="stylesheet" type="text/css">
+        <!-- App Css-->
+        <link th:href="@{/css/app.min.css}" id="app-style" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body class="auth-body-bg">
+        <div class="bg-overlay"></div>
+        <div class="wrapper-page">
+            <div class="container-fluid p-0">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="text-center mt-4">
+                            <div class="mb-3">
+                                <a href="index.html" class="auth-logo">
+                                    <img th:src="@{/picture/logo-dark.png}" height="30" class="logo-dark mx-auto" alt="">
+                                    <img th:src="@{/picture/logo-light.png}" height="30" class="logo-light mx-auto" alt="">
+                                </a>
+                            </div>
+                        </div>
+    
+                        <h4 class="text-muted text-center font-size-18" th:text="#{login.tip}">Sign In</h4>
+                        <!-- 错误显示 -->
+                        <p style="color: #ff0000" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                        <div class="p-3">
+                            <form class="form-horizontal mt-3" th:action="@{/user/login}">
+    
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input name="username" class="form-control" type="text" required="" placeholder="Username" >
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input name="password" class="form-control" type="password" required="" placeholder="Password">
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="form-label ms-1" for="customCheck1" th:text="#{login.remember}">Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mb-3 text-center row mt-3 pt-1">
+                                    <div class="col-12">
+                                        <button class="btn btn-info w-100 waves-effect waves-light" type="submit" th:text="#{login.btn}">Log In</button>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mb-0 row mt-2">
+                                    <div class="col-sm-7 mt-3">
+                                        <a th:href="@{/auth-login.html(l='zh_CN')}" class="text-muted"><i class="mdi mdi-lock"></i>中文</a>
+                                    </div>
+                                    <div class="col-sm-5 mt-3">
+                                        <a th:href="@{/auth-login.html(l='en_US')}" class="text-muted"><i class="mdi mdi-account-circle"></i>English</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end -->
+                    </div>
+                    <!-- end cardbody -->
+                </div>
+                <!-- end card -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end -->
+
+        <!-- JAVASCRIPT -->
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/bootstrap.bundle.min.js"></script>
+        <script src="static/js/metisMenu.min.js"></script>
+        <script src="static/js/simplebar.min.js"></script>
+        <script src="static/js/waves.min.js"></script>
+
+        <script src="static/js/app.js"></script>
+
+    </body>
+</html>
